@@ -1,43 +1,45 @@
 import java.util.Scanner;
 
 public class AssignmentPartb {
-
-    // Function: takes int, returns int array of binary digits
-    static int[] toBinaryArray(int num) {
-        int temp = num;
+    // USER DIFINED FUNCTION
+    static int[] inttobinary(int num) {
+        // creating variebles 
+        int temporary = num;
         int count = 0;
-
-        // Count how many bits we need
-        while (temp > 0) {
+        // this is used count digits only
+        while (temporary > 0) {
+            temporary = temporary / 2;
             count++;
-            temp = temp / 2;
         }
+        // here we create array of required size 
+        int[] binary = new int[count];
 
-        int[] bits = new int[count];
-        temp = num;
-
-        // Fill array from the end (LSB to MSB)
+        // here we storing digits
         for (int i = count - 1; i >= 0; i--) {
-            bits[i] = temp % 2;
-            temp = temp / 2;
+            binary[i] = num % 2;
+            num = num / 2;
         }
-
-        return bits;
+        // after counting and storing here we return array
+        return binary;
     }
 
+       // program starts running from here
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter an integer: ");
-        int num = sc.nextInt();
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter integer");
+        int num = input.nextInt();
+            
+        // calling  function 
 
-        int[] result = toBinaryArray(num);
-
-        System.out.print(num + " in binary = ");
+        int[] result = inttobinary(num);
+        System.out.print("Binary=");
+        // printing result by using enhanced for loop or for each loop and this is last step
         for (int bit : result) {
             System.out.print(bit);
         }
-        System.out.println();
     }
+
 }
+
     
 
