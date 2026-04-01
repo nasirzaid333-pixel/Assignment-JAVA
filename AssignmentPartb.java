@@ -6,7 +6,7 @@ public class AssignmentPartb {
         // creating variebles 
         int temporary = num;
         int count = 0;
-        // this is used count digits only
+        // this is used to count digits only
         while (temporary > 0) {
             temporary = temporary / 2;
             count++;
