@@ -1,30 +1,32 @@
- import java.util.Scanner;
+import java.util.Scanner;
 
 public class AssignmentPartc {
 
-    // Function: takes int, returns binary as a String
-    static String toBinaryString(int num) {
+    // creating user difined function
+    static String inttobinary(int num) {
+        // creating string variable to store the answer
+
         String binary = "";
-        int temp = num;
-
-        while (temp > 0) {
-            binary = (temp % 2) + binary;  // build string right to left
-            temp = temp / 2;
+        // using while loop to convert integers intobinary 
+        while (num > 0) {
+            int remainder = num % 2;
+            binary = remainder + binary;
+            num = num / 2;
         }
-
-        if (binary.isEmpty()) return "0";
+        // after storing  return it 
         return binary;
     }
-
+    //  Main method
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enter an integer: ");
-        int num = sc.nextInt();
+        Scanner input =new Scanner(System.in);
+         System.out.println("Enter integer");
+        int num=input.nextInt();
+          // calling function which we create 
 
-        String result = toBinaryString(num);
-
-        System.out.println(num + " in binary = " + result);
+        String result=inttobinary(num);
+        // printing result 
+        System.out.println("Binary ="+ result);
     }
-}
 
+}
 
