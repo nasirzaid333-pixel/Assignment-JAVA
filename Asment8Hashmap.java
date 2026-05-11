@@ -21,17 +21,20 @@ public class Asment8Hashmap {
                     continue; // skip empty lines
 
                 String[] parts = line.split("\\s+"); // split by whitespace
-                if (parts.length < 4)
+                if (parts.length < 7)
                     continue;
 
                 String product = parts[1] + " " + parts[2]; // e.g. "Product A"
+                int amout = Integer.parseInt(parts[3]);
                 int qty = Integer.parseInt(parts[4]); // Qty column
+
+                int sale = qty*amout;
                 
                 // checking product if exist just update if not create entry
                 if (map.containsKey(product))
-                    map.put(product, map.get(product) + qty);
+                    map.put(product, map.get(product) + sale);
                 else
-                    map.put(product, qty);
+                    map.put(product, sale);
             }
             sc.close();
             // printing hashmap
@@ -45,3 +48,4 @@ public class Asment8Hashmap {
         }
     }
 }
+ 
