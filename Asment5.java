@@ -48,7 +48,7 @@ public class Asment5 {
         for (int i = 0; i < 3; i++) {
             int colsum = 0;
             for (int j = 0; j < 3; j = j + 1) {
-                colsum = colsum + arr[i][j];
+                colsum = colsum + arr[j][i];
             }
             if (colsum != sum) {
                 ismagic = false;
